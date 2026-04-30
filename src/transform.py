@@ -266,8 +266,8 @@ def get_all_queries() -> List[Callable[[Engine], QueryResult]]:
         query_top_10_least_revenue_categories,
         query_top_10_revenue_categories,
         query_real_vs_estimated_delivered_time,
-        query_orders_per_day_and_holidays_2017,
-        query_freight_value_weight_relationship,
+        #query_orders_per_day_and_holidays_2017,
+        #query_freight_value_weight_relationship,
     ]
 
 
