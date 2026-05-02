@@ -21,4 +21,4 @@ GROUP BY
     c.customer_state
 ORDER BY
     revenue DESC                  
-
+LIMIT 10

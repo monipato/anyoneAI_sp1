@@ -12,8 +12,6 @@
 
 SELECT
     c.customer_state AS State,
-    O.order_estimated_delivery_date,
-    O.order_delivered_customer_date,
     CAST((AVG( 
     	julianday(STRFTIME('%Y-%m-%d',o.order_estimated_delivery_date)) 
     	- julianday(STRFTIME('%Y-%m-%d',o.order_delivered_customer_date))

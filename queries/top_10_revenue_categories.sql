@@ -12,7 +12,7 @@
 SELECT
     c.product_category_name_english AS Category,
     COUNT(DISTINCT o.order_id) AS Num_order,
-    SUM(op.payment_value) AS revenue
+    SUM(op.payment_value) AS Revenue
     --SUM(oi.price) AS revenue
 FROM olist_orders o
 JOIN olist_order_items oi 

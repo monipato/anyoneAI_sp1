@@ -33,12 +33,11 @@ SELECT
     SUM(CASE WHEN STRFTIME('%Y', o.order_delivered_customer_date) = '2017' THEN p.payment_value ELSE 0 END) AS Year2017,
     SUM(CASE WHEN STRFTIME('%Y', o.order_delivered_customer_date) = '2018' THEN p.payment_value ELSE 0 END) AS Year2018
 FROM olist_orders o 
-JOIN olist_order_payments p ON o.order_id = p.order_id
-/*JOIN (
+JOIN (
     SELECT order_id, MIN(payment_value) AS payment_value
     FROM olist_order_payments
     GROUP BY order_id
-) p ON o.order_id = p.order_id*/
+) p ON o.order_id = p.order_id
 WHERE           
     o.order_status = 'delivered'
     AND o.order_delivered_customer_date IS NOT NULL
