@@ -8,7 +8,7 @@
 
 SELECT
     c.customer_state,
-    SUM(p.payment_value) AS revenue 
+    SUM(p.payment_value) AS Revenue 
 FROM olist_orders o
     JOIN olist_customers c 
          ON o.customer_id = c.customer_id

@@ -11,13 +11,13 @@
 -- 4. order_status == 'delivered' AND order_delivered_customer_date IS NOT NULL
 
 SELECT
-    c.customer_state AS state,
+    c.customer_state AS State,
     O.order_estimated_delivery_date,
     O.order_delivered_customer_date,
     CAST((AVG( 
     	julianday(STRFTIME('%Y-%m-%d',o.order_estimated_delivery_date)) 
     	- julianday(STRFTIME('%Y-%m-%d',o.order_delivered_customer_date))
-    )) AS INTEGER) AS delivery_difference   
+    )) AS INTEGER) AS Delivery_Difference   
 FROM olist_orders o
 JOIN olist_customers c 
     ON o.customer_id = c.customer_id
